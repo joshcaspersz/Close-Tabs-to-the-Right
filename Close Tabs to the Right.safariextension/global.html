@@ -1,0 +1,12 @@
+<script type="text/javascript">
+	safari.application.addEventListener('command', function(event) {
+		if (event['command'] == "close_right_tabs") {
+			var activeTabIndex = safari.application.activeBrowserWindow.tabs.indexOf(safari.application.activeBrowserWindow.activeTab);
+			for(var i = safari.application.activeBrowserWindow.tabs.length - 1; i>=0; i--){
+				if(i>activeTabIndex){
+					safari.application.activeBrowserWindow.tabs[i].close();
+				}
+			}
+		}
+	}, false);
+</script>
